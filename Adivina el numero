@@ -1,0 +1,31 @@
+from random import *
+
+intentos = 0
+numero_computadora = randint(1,100)
+nombre = input("Escribe tu nombre: ")
+
+print("---------------------------------------")
+print("Bienvenido", nombre,  "a nuestro programa adivina el numero")
+print("Tienes 10 intentos para adivinar el numero que pense que esta entre el 1 y el 100")
+print("---------------------------------------")
+
+while intentos < 10:
+    numero_nuestro = int(input("Escribe un numero entre el 1 y el 100 "))
+    intentos+= 1
+    if numero_nuestro not in range(0,100):
+        print("Tu numero esta fuera del rango")
+        print(f"llevas {intentos} intentos")
+    elif numero_nuestro > numero_computadora:
+        print("El numero que pense es mas bajo")
+        print(f"llevas {intentos} intentos")
+    elif numero_nuestro < numero_computadora:
+        print("El numero que pense es mas alto")
+        print(f"llevas {intentos} intentos")
+    elif numero_nuestro == numero_computadora:
+        print(f"Has ganado!!! el numero que pense era {numero_computadora} y lo lograste conseguir en {intentos} intentos")
+        break
+
+print("---------------------------------------")
+if numero_computadora != numero_nuestro:
+    print(f"Perdiste el numero que pense era este {numero_computadora} intentalo de nuevo :(")
+print("---------------------------------------")
